@@ -27,7 +27,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript, fea
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio-website.git
+git clone https://github.com/adityachawla20012005/portfolio-website.git
 ```
 
 2. Navigate to the project directory:
@@ -81,5 +81,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - [Your Email]
-Project Link: [https://github.com/YOUR_USERNAME/portfolio-website](https://github.com/YOUR_USERNAME/portfolio-website) 
+Aditya Chawla - [adityachawla20012005@gmail.com]
+Project Link: [https://github.com/adityachawla20012005/portfolio-website](https://github.com/adityachawla20012005/portfolio-website) 
