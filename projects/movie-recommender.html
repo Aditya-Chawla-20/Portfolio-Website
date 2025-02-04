@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System - Project Details</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../components/navbar.js"></script>
+    <script src="../components/project-header.js"></script>
+    <script src="../components/project-gallery.js"></script>
+    <script src="../components/project-description.js"></script>
+    <script src="../components/feature-grid.js"></script>
+    <script src="../components/tech-details.js"></script>
+    <script src="../components/metrics-grid.js"></script>
+    <script src="../components/project-links.js"></script>
+</head>
+<body class="light-mode">
+    <app-navbar></app-navbar>
+
+    <div class="project-detail-container">
+        <project-header
+            title="Movie Recommender System"
+            tags='["Python", "Machine Learning", "Scikit-learn", "Flask", "NumPy", "Pandas", "Collaborative Filtering", "Content-Based Filtering"]'>
+        </project-header>
+
+        <div class="project-overview">
+            <project-gallery
+                project-name="movie-recommender"
+                main-image="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80"
+                images='[]'>
+            </project-gallery>
+
+            <project-description
+                overview="The Movie Recommender System is an advanced machine learning project that provides personalized movie recommendations to users based on their viewing history and preferences. The system combines collaborative filtering and content-based filtering approaches to deliver highly accurate suggestions."
+                details="The project demonstrates my expertise in machine learning algorithms, data processing, and web development. I implemented both user-based and item-based collaborative filtering methods, along with a content-based recommendation engine that analyzes movie features such as genre, cast, and plot keywords.">
+            </project-description>
+
+            <feature-grid
+                features='[
+                    {
+                        "icon": "fa-brain",
+                        "title": "Hybrid Recommendation",
+                        "description": "Combined collaborative and content-based filtering for better accuracy"
+                    },
+                    {
+                        "icon": "fa-chart-line",
+                        "title": "Real-time Learning",
+                        "description": "Continuous model improvement based on user interactions"
+                    },
+                    {
+                        "icon": "fa-user-friends",
+                        "title": "Personalization",
+                        "description": "User preference learning and profile-based recommendations"
+                    },
+                    {
+                        "icon": "fa-tachometer-alt",
+                        "title": "Performance",
+                        "description": "Optimized algorithms for quick recommendation generation"
+                    }
+                ]'>
+            </feature-grid>
+
+            <tech-details
+                sections='[
+                    {
+                        "title": "Machine Learning",
+                        "items": [
+                            "Implemented Matrix Factorization using Singular Value Decomposition",
+                            "Used TF-IDF vectorization for content-based filtering",
+                            "Developed custom similarity metrics for movie comparison",
+                            "Implemented A/B testing for algorithm optimization"
+                        ]
+                    },
+                    {
+                        "title": "Backend Development",
+                        "items": [
+                            "Flask REST API for serving recommendations",
+                            "PostgreSQL database for user data and movie information",
+                            "Redis caching for frequently requested recommendations",
+                            "Celery for background task processing"
+                        ]
+                    },
+                    {
+                        "title": "Frontend Features",
+                        "items": [
+                            "Interactive movie exploration interface",
+                            "Real-time rating and feedback system",
+                            "Responsive design for all devices",
+                            "Progressive web app capabilities"
+                        ]
+                    }
+                ]'>
+            </tech-details>
+
+            <metrics-grid
+                metrics='[
+                    {
+                        "value": "92%",
+                        "label": "Recommendation Accuracy"
+                    },
+                    {
+                        "value": "500+",
+                        "label": "Movies in Database"
+                    },
+                    {
+                        "value": "25%",
+                        "label": "Engagement Increase"
+                    }
+                ]'>
+            </metrics-grid>
+
+            <project-links
+                github-url="https://github.com/yourusername/movie-recommender"
+                demo-url="#">
+            </project-links>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

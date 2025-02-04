@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzer - Project Details</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../components/navbar.js"></script>
+    <script src="../components/project-header.js"></script>
+    <script src="../components/project-gallery.js"></script>
+    <script src="../components/feature-grid.js"></script>
+    <script src="../components/tech-details.js"></script>
+    <script src="../components/metrics-grid.js"></script>
+    <script src="../components/project-links.js"></script>
+</head>
+<body class="light-mode">
+    <app-navbar></app-navbar>
+
+    <div class="project-detail-container">
+        <project-header
+            title="Quizzer"
+            tags='["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Chatbot", "WebSocket"]'>
+        </project-header>
+
+        <div class="project-overview">
+            <project-gallery
+                project-name="quizzer"
+                main-image="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80"
+                images='[]'>
+            </project-gallery>
+
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>Quizzer is an innovative test management system that revolutionizes the way educational institutions conduct and manage assessments. The platform features an intelligent chatbot assistant that helps users navigate through tests and provides instant support for common queries.</p>
+                <p>The project showcases my ability to create interactive educational technology solutions that enhance the learning experience. I implemented real-time features using WebSocket for live quiz participation and instant result updates, along with an AI-powered chatbot for student assistance.</p>
+            </div>
+
+            <feature-grid
+                features='[
+                    {
+                        "icon": "fa-robot",
+                        "title": "AI Chatbot",
+                        "description": "Intelligent assistant for quiz navigation and support"
+                    },
+                    {
+                        "icon": "fa-clock",
+                        "title": "Real-time Updates",
+                        "description": "Live quiz participation and instant result tracking"
+                    },
+                    {
+                        "icon": "fa-chart-bar",
+                        "title": "Analytics",
+                        "description": "Comprehensive performance tracking and insights"
+                    },
+                    {
+                        "icon": "fa-users-cog",
+                        "title": "Admin Controls",
+                        "description": "Advanced quiz management and user administration"
+                    }
+                ]'>
+            </feature-grid>
+
+            <tech-details
+                sections='[
+                    {
+                        "title": "Frontend Development",
+                        "items": [
+                            "Interactive UI built with vanilla JavaScript and modern CSS",
+                            "Real-time updates using WebSocket connections",
+                            "Custom animations and transitions for better UX",
+                            "Responsive design with mobile-first approach"
+                        ]
+                    },
+                    {
+                        "title": "Backend Architecture",
+                        "items": [
+                            "Node.js and Express.js server implementation",
+                            "MongoDB database for flexible data storage",
+                            "WebSocket server for real-time communication",
+                            "RESTful API for data management"
+                        ]
+                    },
+                    {
+                        "title": "Chatbot Integration",
+                        "items": [
+                            "Natural Language Processing for query understanding",
+                            "Context-aware responses and suggestions",
+                            "Integration with quiz system for relevant help",
+                            "Learning capability from user interactions"
+                        ]
+                    }
+                ]'>
+            </tech-details>
+
+            <metrics-grid
+                metrics='[
+                    {
+                        "value": "1000+",
+                        "label": "Active Students"
+                    },
+                    {
+                        "value": "85%",
+                        "label": "Support Automation"
+                    },
+                    {
+                        "value": "30%",
+                        "label": "Time Saved"
+                    }
+                ]'>
+            </metrics-grid>
+
+            <project-links
+                github-url="https://github.com/yourusername/quizzer"
+                demo-url="#">
+            </project-links>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

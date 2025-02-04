@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments Platform Redesign - Project Details</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../components/navbar.js"></script>
+    <script src="../components/project-header.js"></script>
+    <script src="../components/project-gallery.js"></script>
+    <script src="../components/feature-grid.js"></script>
+    <script src="../components/tech-details.js"></script>
+    <script src="../components/metrics-grid.js"></script>
+    <script src="../components/project-links.js"></script>
+</head>
+<body class="light-mode">
+    <app-navbar></app-navbar>
+
+    <div class="project-detail-container">
+        <project-header
+            title="Payments Platform Redesign"
+            tags='["UI/UX", "Figma", "Design Systems", "Prototyping", "User Research", "Accessibility", "Design Thinking"]'>
+        </project-header>
+
+        <div class="project-overview">
+            <project-gallery
+                project-name="payments-platform"
+                main-image="https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?auto=format&fit=crop&q=80"
+                images='[]'>
+            </project-gallery>
+
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>The Payments Platform Redesign project focused on transforming a complex payment collection system into an intuitive and user-friendly interface. The redesign prioritized accessibility, efficiency, and visual appeal while maintaining robust functionality for payment processing.</p>
+                <p>This project demonstrates my expertise in UI/UX design, with particular emphasis on creating seamless user flows, implementing modern design patterns, and ensuring accessibility standards. The redesign resulted in significant improvements in user satisfaction and task completion rates.</p>
+            </div>
+
+            <feature-grid
+                features='[
+                    {
+                        "icon": "fa-moon",
+                        "title": "Dark Mode",
+                        "description": "Elegant dark theme implementation with smooth transitions"
+                    },
+                    {
+                        "icon": "fa-universal-access",
+                        "title": "Accessibility",
+                        "description": "WCAG 2.1 compliant design with screen reader support"
+                    },
+                    {
+                        "icon": "fa-mobile-alt",
+                        "title": "Responsive Design",
+                        "description": "Seamless experience across all device sizes"
+                    },
+                    {
+                        "icon": "fa-project-diagram",
+                        "title": "Workflow Optimization",
+                        "description": "Streamlined payment processes and user journeys"
+                    }
+                ]'>
+            </feature-grid>
+
+            <tech-details
+                sections='[
+                    {
+                        "title": "Design Process",
+                        "items": [
+                            "Conducted user research and created detailed personas",
+                            "Developed comprehensive user journey maps",
+                            "Created low and high-fidelity wireframes",
+                            "Implemented iterative design based on user feedback"
+                        ]
+                    },
+                    {
+                        "title": "Design System",
+                        "items": [
+                            "Created a scalable component library",
+                            "Implemented consistent typography and spacing",
+                            "Developed color systems for light and dark modes",
+                            "Established design tokens and variables"
+                        ]
+                    },
+                    {
+                        "title": "Prototyping",
+                        "items": [
+                            "Built interactive prototypes in Figma",
+                            "Created micro-interactions and animations",
+                            "Conducted usability testing sessions",
+                            "Implemented feedback from user testing"
+                        ]
+                    }
+                ]'>
+            </tech-details>
+
+            <metrics-grid
+                metrics='[
+                    {
+                        "value": "45%",
+                        "label": "Faster Completion"
+                    },
+                    {
+                        "value": "98%",
+                        "label": "Accessibility Score"
+                    },
+                    {
+                        "value": "35%",
+                        "label": "Support Reduction"
+                    }
+                ]'>
+            </metrics-grid>
+
+            <project-links
+                github-url="https://github.com/yourusername/payments-platform"
+                demo-url="#">
+            </project-links>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

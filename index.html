@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aditya Chawla - Full-Stack Developer, AI Enthusiast, and Cybersecurity Innovator. Explore my portfolio showcasing MERN stack projects, machine learning applications, and UI/UX designs.">
+    <meta name="keywords" content="Full-Stack Developer, AI, Machine Learning, Cybersecurity, MERN Stack, Web Development, Portfolio, Aditya Chawla">
+    <meta name="author" content="Aditya Chawla">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Aditya Chawla - Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Full-Stack Developer specializing in MERN Stack, AI, and Cybersecurity. View my latest projects and skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-url.com">
+    <meta property="og:image" content="assets/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aditya Chawla - Full-Stack Developer Portfolio">
+    <meta name="twitter:description" content="Full-Stack Developer specializing in MERN Stack, AI, and Cybersecurity. View my latest projects and skills.">
+    <meta name="twitter:image" content="assets/og-image.jpg">
+    
+    <!-- Theme Color for Browser -->
+    <meta name="theme-color" content="#4f46e5">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Aditya Chawla",
+        "jobTitle": "Full-Stack Developer",
+        "url": "https://your-portfolio-url.com",
+        "sameAs": [
+            "https://linkedin.com/in/-aditya-chawla/",
+            "https://github.com/Aditya-Chawla-20",
+            "https://leetcode.com/u/Aditya_Chawla/"
+        ],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Chitkara University"
+        }
+    }
+    </script>
+
+    <title>Aditya Chawla - Full-Stack Developer Portfolio</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR-GA-ID');
+    </script>
+</head>
+<body class="light-mode">
+    <canvas id="bg-animation"></canvas>
+    <nav class="navbar">
+        <div class="nav-brand">AC</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="hero-text">
+                <h1>Aditya Chawla</h1>
+                <p class="title">Full-Stack Developer | AI Enthusiast | Cybersecurity Innovator</p>
+                <p class="subtitle">Transforming ideas into elegant, secure, and intelligent solutions</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-button">View Projects</a>
+                    <a href="#contact" class="cta-button secondary">Hire Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <img src="assets/WhatsApp Image 2025-01-16 at 14.51.47.jpeg" alt="Aditya Chawla" class="profile-img">
+                    <div class="profile-bg"></div>
+                </div>
+                <div class="blob-animation"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="section-header" data-aos="fade-up">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-up">
+                <p>I'm a Computer Science student at Chitkara University with a CGPA of 8.28. My journey in programming started with C++ and has evolved into developing full-stack applications using the MERN stack. I'm passionate about Machine Learning, UI/UX design, and solving complex problems through code.</p>
+                <p>With experience in cybersecurity assessments and UI/UX design, I've developed a strong foundation in creating secure and user-friendly applications. I'm also an active competitive programmer with 280+ solved questions on LeetCode.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card education" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>B.E. Computer Science</p>
+                </div>
+
+                <div class="about-card experience" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Experience</h3>
+                    <p>2+ Years Coding</p>
+                </div>
+            </div>
+
+            <div class="journey-section" data-aos="fade-up">
+                <h3>My Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="timeline-date">2022</div>
+                            <h4>Started Computer Science Degree</h4>
+                            <p>Began journey at Chitkara University studying Computer Science</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="timeline-date">2023</div>
+                            <h4>TATA Imagination Challenge</h4>
+                            <p>National Semi-finalist in the TATA Imagination Challenge</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="timeline-date">2024</div>
+                            <h4>Full Stack Development</h4>
+                            <p>Developed multiple MERN stack projects and ML applications</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="timeline-date">Current</div>
+                            <h4>Continuous Learning</h4>
+                            <p>Focusing on Machine Learning and Competitive Programming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications-section" data-aos="fade-up">
+                <h3>Certifications</h3>
+                <div class="certification-list">
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Machine Learning Capstone Certification</h4>
+                            <p>IBM</p>
+                        </div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Blockchain Foundation and Scope Practices Certification</h4>
+                            <p>Coursera</p>
+                        </div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Generative AI Certification</h4>
+                            <p>IBM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Projects</h2>
+            <p class="section-subtitle">Recent work</p>
+        </div>
+        <div class="project-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Dev</button>
+            <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <button class="filter-btn" data-filter="ui">UI/UX</button>
+        </div>
+        <div class="project-grid">
+            <!-- Match N Catch -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80" alt="Match N Catch - E-commerce Platform">
+                </div>
+                <div class="project-content">
+                    <h3>Match N Catch</h3>
+                    <p>A dynamic e-commerce platform built with MERN stack</p>
+                    <div class="tech-stack">
+                        <span>MERN Stack</span>
+                        <span>MongoDB</span>
+                        <span>Express.js</span>
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/match-n-catch" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="projects/match-n-catch.html" class="project-link">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Recommender System -->
+            <div class="project-card" data-category="ai" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80" alt="Movie Recommender System">
+                </div>
+                <div class="project-content">
+                    <h3>Movie Recommender System</h3>
+                    <p>ML-powered movie recommendation system with Python</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Web Development</span>
+                        <span>Data Science</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/movie-recommender" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="projects/movie-recommender.html" class="project-link">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quizzer -->
+            <div class="project-card" data-category="web" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80" alt="Quizzer - Test Management System">
+                </div>
+                <div class="project-content">
+                    <h3>Quizzer</h3>
+                    <p>Interactive test management system with chatbot integration</p>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Chatbot</span>
+                        <span>Education Tech</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/quizzer" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="projects/quizzer.html" class="project-link">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payments Platform Redesign -->
+            <div class="project-card" data-category="ui" data-aos="fade-up">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?auto=format&fit=crop&q=80" alt="Payments Platform Redesign">
+                </div>
+                <div class="project-content">
+                    <h3>Payments Platform Redesign</h3>
+                    <p>UI/UX design for a payments collection platform</p>
+                    <div class="tech-stack">
+                        <span>UI/UX</span>
+                        <span>Figma</span>
+                        <span>Design</span>
+                        <span>Payments</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/payments-platform" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="projects/payments-platform.html" class="project-link">
+                            <i class="fas fa-info-circle"></i> View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="resume">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Resume</h2>
+        </div>
+        <div class="resume-content">
+            <!-- Education -->
+            <div class="resume-section" data-aos="fade-up">
+                <h3>Education</h3>
+                <div class="resume-card">
+                    <h4>Bachelor's in Technology, Computer Science</h4>
+                    <p class="institution">Chitkara University</p>
+                    <p class="description">Currently pursuing B.E. in Computer Science with a CGPA of 8.28</p>
+                    <span class="date">2026</span>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="resume-section" data-aos="fade-up">
+                <h3>Technical Skills</h3>
+                <div class="resume-card">
+                    <h4>Languages</h4>
+                    <p class="description">Programming & Markup</p>
+                    <p class="skills">C++, Java, JavaScript, C, Python, SQL, HTML, CSS</p>
+                    <span class="date">Present</span>
+                </div>
+                <div class="resume-card">
+                    <h4>Technologies & Frameworks</h4>
+                    <p class="description">Development Tools</p>
+                    <p class="skills">Nodejs, MongoDB, Reactjs, Redis, Canva, Figma, GitHub, UX/UI Design, Machine Learning</p>
+                    <span class="date">Present</span>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="resume-section" data-aos="fade-up">
+                <h3>Projects</h3>
+                <div class="resume-card">
+                    <h4>Match N Catch</h4>
+                    <p class="institution">MERN Stack Project</p>
+                    <p class="description">Developed a dynamic e-commerce platform using MERN stack, serving 200+ users. Implemented advanced product features and optimized data retrieval by 40%.</p>
+                    <span class="date">September 2024</span>
+                </div>
+                <div class="resume-card">
+                    <h4>Movie Recommender System</h4>
+                    <p class="institution">Python & Machine Learning</p>
+                    <p class="description">Built a recommendation system for 500+ movies with 92% accuracy in user satisfaction. Increased platform engagement by 25%.</p>
+                    <span class="date">March 2024</span>
+                </div>
+                <div class="resume-card">
+                    <h4>Quizzer</h4>
+                    <p class="institution">Web Development</p>
+                    <p class="description">Created an interactive test management system with chatbot integration and real-time result tracking.</p>
+                    <span class="date">December 2023</span>
+                </div>
+                <div class="resume-card">
+                    <h4>Payments Platform Redesign</h4>
+                    <p class="institution">UI/UX Design</p>
+                    <p class="description">Redesigned a payments platform with improved UX, implementing light/dark mode and optimized workflows.</p>
+                    <span class="date">February 2023</span>
+                </div>
+            </div>
+
+            <!-- Achievements & Certifications -->
+            <div class="resume-section" data-aos="fade-up">
+                <h3>Achievements & Certifications</h3>
+                <div class="resume-card">
+                    <h4>TATA Imagination Challenge</h4>
+                    <p class="institution">National Semi-finalist</p>
+                    <p class="description">Achieved national recognition in the prestigious competition</p>
+                    <span class="date">October 2023</span>
+                </div>
+                <div class="resume-card">
+                    <h4>Professional Certifications</h4>
+                    <p class="institution">IBM & Coursera</p>
+                    <ul class="certification-list">
+                        <li>Machine Learning Capstone Certification: IBM</li>
+                        <li>Blockchain Foundation Certification: Coursera</li>
+                        <li>Generative AI Certification: IBM</li>
+                    </ul>
+                    <span class="date">2023</span>
+                </div>
+            </div>
+
+            <div class="resume-cta" data-aos="fade-up">
+                <a href="assets/resume/Aditya_Chawla_Resume.pdf" class="cta-button" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p class="section-subtitle">Get in touch</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 9896993628</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>chawlaaditya58@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Ambala Cantt, Haryana, India</p>
+                    </div>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form" data-aos="fade-left">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+        <div class="social-links" data-aos="fade-up">
+            <a href="https://linkedin.com/in/-aditya-chawla/" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Aditya-Chawla-20" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://leetcode.com/u/Aditya_Chawla/" target="_blank" class="social-link">
+                <i class="fas fa-code"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Aditya Chawla</h3>
+                <p>Full-Stack Developer & AI Enthusiast</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2024 Aditya Chawla. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
