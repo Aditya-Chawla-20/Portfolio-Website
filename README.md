@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website built with HTML, CSS, and JavaScript, featuring a dynamic 3D background animation and dark/light mode support.
 
+🌐 **Live Demo:** [View Portfolio](https://adityachawla20012005.github.io/portfolio-website)
+
 ## Features
 
 - Responsive design that works on all devices
