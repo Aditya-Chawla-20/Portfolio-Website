@@ -780,11 +780,33 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
+.project-details .project-image {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.project-details .project-preview {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-details .project-preview:hover {
+    transform: scale(1.02);
+}
+
 .details-content {
     background: var(--card-bg);
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 15px;
     max-width: 800px;
+    width: 90%;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;

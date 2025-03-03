@@ -776,6 +776,9 @@ function showProjectDetails(title, description, techStack) {
         modal.innerHTML = `
             <div class="details-content">
                 <button class="close-modal">&times;</button>
+                <div class="project-image">
+                    <img src="" alt="Project Preview" class="project-preview">
+                </div>
                 <h3></h3>
                 <p class="project-description"></p>
                 <div class="tech-section">
@@ -802,7 +805,12 @@ function showProjectDetails(title, description, techStack) {
         });
     }
 
+    // Get the project image
+    const projectCard = document.querySelector(`.project-card h3[textContent="${title}"]`).closest('.project-card');
+    const projectImage = projectCard.querySelector('.project-image img').src;
+
     // Update modal content
+    modal.querySelector('.project-preview').src = projectImage;
     modal.querySelector('h3').textContent = title;
     modal.querySelector('.project-description').textContent = description;
     modal.querySelector('.tech-stack-list').textContent = techStack;
