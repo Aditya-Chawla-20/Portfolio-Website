@@ -682,14 +682,20 @@ h1, h2, h3, h4, h5, h6 {
 .project-image {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     overflow: hidden;
+    border-radius: 12px 12px 0 0;
 }
 
 .project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 
@@ -755,7 +761,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 /* Project Details Modal */
@@ -1358,7 +1364,7 @@ footer {
     }
 
     .project-image {
-        height: 200px;
+        padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
     }
     
     .projects-grid {
@@ -1379,6 +1385,11 @@ footer {
     .resume-card:hover {
         transform: translateX(0);
         transform: translateY(-5px);
+    }
+
+    .project-preview,
+    .project-image-gallery .main-image {
+        aspect-ratio: 4/3;
     }
 }
 
@@ -1469,9 +1480,11 @@ footer {
 
 .project-image-gallery .main-image {
     width: 100%;
-    height: 500px;
+    height: auto;
+    aspect-ratio: 16/9;
     object-fit: cover;
-    border-radius: 15px;
+    object-position: center;
+    border-radius: 12px;
     margin-bottom: 1rem;
     box-shadow: var(--card-shadow);
 }
