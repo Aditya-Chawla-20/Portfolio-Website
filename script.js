@@ -9,63 +9,74 @@ AOS.init({
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const filter = button.dataset.filter;
-        
-        projectCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.style.display = 'block';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
-            }
+if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
         });
     });
-});
+}
 
 // Project Details Modal Functionality
 const detailsBtns = document.querySelectorAll('.details-btn');
 const closeButtons = document.querySelectorAll('.close-modal');
 const projectDetails = document.querySelectorAll('.project-details');
 
-// Open modal when clicking "View Details"
-detailsBtns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        projectDetails[index].classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-    });
-});
-
-// Close modal when clicking the close button
-closeButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        projectDetails[index].classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    });
-});
-
-// Close modal when clicking outside the content
-projectDetails.forEach(modal => {
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+// Only set up modal functionality if elements exist
+if (detailsBtns.length > 0 && projectDetails.length > 0) {
+    // Open modal when clicking "View Details"
+    detailsBtns.forEach((btn, index) => {
+        if (projectDetails[index]) {
+            btn.addEventListener('click', () => {
+                projectDetails[index].classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            });
         }
     });
-});
+
+    // Close modal when clicking the close button
+    if (closeButtons.length > 0) {
+        closeButtons.forEach((btn, index) => {
+            if (projectDetails[index]) {
+                btn.addEventListener('click', () => {
+                    projectDetails[index].classList.remove('active');
+                    document.body.style.overflow = 'auto'; // Restore scrolling
+                });
+            }
+        });
+    }
+
+    // Close modal when clicking outside the content
+    projectDetails.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+}
 
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
@@ -104,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme based on localStorage or system preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme) {
         setTheme(savedTheme === 'dark');
     } else {
@@ -115,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         const isDark = !body.classList.contains('dark-mode');
         setTheme(isDark);
-        
+
         // Update the background animation
         if (typeof updateScene === 'function') {
             updateScene();
@@ -144,7 +155,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const scrollToTop = document.querySelector('.scroll-to-top');
 
 window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 100) {
+    if (window.scrollY > 100) {
         scrollToTop.classList.add('visible');
     } else {
         scrollToTop.classList.remove('visible');
@@ -161,42 +172,53 @@ scrollToTop.addEventListener('click', () => {
 // Form Submission
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    try {
-        // Add your form submission logic here
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated delay
-        
-        // Success message
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-        submitBtn.style.backgroundColor = '#10B981';
-        contactForm.reset();
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.style.backgroundColor = '';
-            submitBtn.disabled = false;
-        }, 3000);
-    } catch (error) {
-        // Error message
-        submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send';
-        submitBtn.style.backgroundColor = '#EF4444';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.style.backgroundColor = '';
-            submitBtn.disabled = false;
-        }, 3000);
-    }
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Create form data for future use
+        // const formData = new FormData(contactForm);
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Send Message';
+
+        if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+        }
+
+        try {
+            // Add your form submission logic here
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated delay
+
+            // Success message
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                submitBtn.style.backgroundColor = '#10B981';
+            }
+            contactForm.reset();
+
+            setTimeout(() => {
+                if (submitBtn) {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.disabled = false;
+                }
+            }, 3000);
+        } catch (error) {
+            // Error message
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send';
+                submitBtn.style.backgroundColor = '#EF4444';
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
+        }
+    });
+}
 
 // GSAP Animations
 gsap.from('.hero-text h1', {
@@ -349,7 +371,7 @@ const initBackground = () => {
 
     // Create mesh for dark mode
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    
+
     // Create geometries for light mode
     const circles = [];
     const circleCount = 15;
@@ -427,7 +449,7 @@ const initBackground = () => {
     const handleResize = () => {
         const width = canvas.offsetWidth;
         const height = canvas.offsetHeight;
-        
+
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
         renderer.setSize(width, height, false);
@@ -464,54 +486,54 @@ const initBackground = () => {
 // Initialize background after DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initBackground();
-    
+
     // Existing initialization code
     AOS.init({
         duration: 1000,
         once: true,
         offset: 100
     });
-    
+
     // Mobile menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
+
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         hamburger.classList.toggle('active');
     });
-    
+
     // Scroll to top
     const scrollToTop = document.querySelector('.scroll-to-top');
-    
+
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
+        if (window.scrollY > 100) {
             scrollToTop.classList.add('visible');
         } else {
             scrollToTop.classList.remove('visible');
         }
     });
-    
+
     scrollToTop.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
+
     // Project filters
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             const filter = button.getAttribute('data-filter');
-            
+
             projectCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = 'block';
@@ -521,7 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    
+
     // Form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -581,7 +603,7 @@ const createReadingProgress = () => {
     document.body.appendChild(progress);
 
     const progressBar = progress.querySelector('.reading-progress-bar');
-    
+
     window.addEventListener('scroll', () => {
         const windowHeight = window.innerHeight;
         const fullHeight = document.documentElement.scrollHeight - windowHeight;
@@ -595,7 +617,8 @@ createReadingProgress();
 // Progressive Image Loading
 const progressiveImages = document.querySelectorAll('.project-image img');
 progressiveImages.forEach(img => {
-    const lowQualitySrc = img.src;
+    // Store current src as backup if needed
+    // const lowQualitySrc = img.src;
     const highQualitySrc = img.dataset.src;
 
     if (highQualitySrc) {
@@ -618,17 +641,17 @@ document.querySelector('.project-filters').prepend(projectSearch);
 projectSearch.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const projects = document.querySelectorAll('.project-card');
-    
+
     projects.forEach(project => {
         const title = project.querySelector('h3').textContent.toLowerCase();
         const description = project.querySelector('p').textContent.toLowerCase();
         const tags = Array.from(project.querySelectorAll('.tech-stack span'))
             .map(tag => tag.textContent.toLowerCase());
-        
-        const matches = title.includes(searchTerm) || 
+
+        const matches = title.includes(searchTerm) ||
                        description.includes(searchTerm) ||
                        tags.some(tag => tag.includes(searchTerm));
-        
+
         project.style.display = matches ? 'block' : 'none';
     });
 });
@@ -638,7 +661,7 @@ const createTypingAnimation = () => {
     const subtitle = document.querySelector('.hero-text .subtitle');
     const text = subtitle.textContent;
     subtitle.textContent = '';
-    
+
     let i = 0;
     const type = () => {
         if (i < text.length) {
@@ -647,7 +670,7 @@ const createTypingAnimation = () => {
             setTimeout(type, 50);
         }
     };
-    
+
     type();
 };
 
@@ -726,7 +749,7 @@ document.querySelectorAll('a, button').forEach(element => {
 // Project Card Button Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
         // View Code button
         const viewCodeBtn = card.querySelector('a[href*="github.com"]');
@@ -760,7 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const techStack = Array.from(card.querySelectorAll('.tech-stack span'))
                     .map(span => span.textContent)
                     .join(', ');
-                
+
                 showProjectDetails(projectTitle, projectDesc, techStack);
             });
         }
@@ -823,12 +846,12 @@ function showProjectDetails(title, description, techStack) {
 // Footer Links Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const footerLinks = document.querySelectorAll('.footer-links a');
-    
+
     footerLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 e.preventDefault();
                 targetSection.scrollIntoView({
@@ -843,7 +866,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Social Links Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const socialLinks = document.querySelectorAll('.social-links a');
-    
+
     socialLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
@@ -876,31 +899,31 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalBtnText = submitBtn.innerHTML;
-            
+
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
+
             try {
                 // Simulate form submission (replace with actual API call)
                 await new Promise(resolve => setTimeout(resolve, 1500));
-                
+
                 // Success feedback
                 submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                 submitBtn.style.backgroundColor = '#10B981';
                 contactForm.reset();
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.style.backgroundColor = '';
                     submitBtn.disabled = false;
                 }, 3000);
-                
+
             } catch (error) {
                 // Error feedback
                 submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send';
                 submitBtn.style.backgroundColor = '#EF4444';
-                
+
                 setTimeout(() => {
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.style.backgroundColor = '';
@@ -909,4 +932,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-}); 
+});
