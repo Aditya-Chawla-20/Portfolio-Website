@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showlog - Product Catalog Application</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">AC</a>
+        <div class="nav-controls">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="project-detail-container">
+        <div class="back-to-projects">
+            <a href="../index.html#projects">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+
+        <header class="project-header">
+            <h1>Showlog</h1>
+            <div class="project-tags">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MongoDB</span>
+                <span>CRUD</span>
+                <span>Responsive Design</span>
+                <span>Product Catalog</span>
+            </div>
+        </header>
+
+        <div class="project-overview">
+            <div class="project-image">
+                <img src="../assets/images/showlog.jpg"
+                     alt="Showlog App Preview"
+                     class="project-preview">
+            </div>
+
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>Showlog is a scalable product catalog application built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides a comprehensive solution for managing and showcasing products with complete CRUD (Create, Read, Update, Delete) functionality for administrators and a detailed browsing experience for users.</p>
+                <p>The application features dynamic routing for individual product pages and implements category filters to enhance product discoverability. With a focus on user experience, Showlog delivers a responsive design that works seamlessly across all screen sizes.</p>
+            </div>
+
+            <div class="project-features">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-edit"></i>
+                        <h3>Complete CRUD Operations</h3>
+                        <p>Full admin control for product management</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-filter"></i>
+                        <h3>Category Filtering</h3>
+                        <p>Enhanced product discoverability with filters</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-route"></i>
+                        <h3>Dynamic Routing</h3>
+                        <p>Individual product pages with detailed information</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Responsive Design</h3>
+                        <p>Compatible with all screen sizes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technical-details">
+                <h2>Technical Implementation</h2>
+                <div class="tech-section">
+                    <h3>Frontend (React.js)</h3>
+                    <ul>
+                        <li>React.js for component-based UI development</li>
+                        <li>React Router for dynamic page routing</li>
+                        <li>Context API for state management</li>
+                        <li>CSS modules for component-specific styling</li>
+                        <li>Responsive design with media queries</li>
+                    </ul>
+                </div>
+                <div class="tech-section">
+                    <h3>Backend (Node.js & Express.js)</h3>
+                    <ul>
+                        <li>RESTful API architecture with Express.js</li>
+                        <li>MongoDB for database storage</li>
+                        <li>Mongoose ODM for data modeling</li>
+                        <li>JWT authentication for secure admin access</li>
+                        <li>MVC pattern for organized code structure</li>
+                    </ul>
+                </div>
+                <div class="tech-section">
+                    <h3>Features & Security</h3>
+                    <ul>
+                        <li>Secure admin dashboard for product management</li>
+                        <li>Image upload and storage functionality</li>
+                        <li>Advanced filtering and search capabilities</li>
+                        <li>Input validation and sanitization</li>
+                        <li>Error handling and logging</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-metrics">
+                <h2>Project Impact</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">100%</span>
+                        <span class="metric-label">CRUD Functionality</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">Responsive</span>
+                        <span class="metric-label">Design</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">Dynamic</span>
+                        <span class="metric-label">Routing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Aditya-Chawla-20/showlog" class="cta-button" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+                <a href="#" class="cta-button secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
