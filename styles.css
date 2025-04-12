@@ -1040,6 +1040,10 @@ h1, h2, h3, h4, h5, h6 {
 .resume-cta {
     text-align: center;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* Blog Section */
@@ -1366,7 +1370,7 @@ footer {
     .project-image {
         padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1897,4 +1901,4 @@ a, button, .project-card, .nav-links a, .social-link, .cta-button {
     --section-bg: #1a1a1a;
     --card-bg: #000000;
     --border-color: #ffffff;
-} 
+}
