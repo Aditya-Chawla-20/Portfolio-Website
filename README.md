@@ -22,7 +22,7 @@ A modern, responsive portfolio website showcasing my projects and skills as a Fu
 
 ## Deployment
 
-This site is deployed on Vercel at [https://aditya-chawla-portfolio.vercel.app](https://aditya-chawla-portfolio.vercel.app)
+This site is deployed on Vercel at [https://aditya-chawla-portfolio-website.vercel.app/](https://aditya-chawla-portfolio-website.vercel.app/)
 
 ## Local Development
 
